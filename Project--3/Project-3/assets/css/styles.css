@@ -1,14 +1,149 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-color: #10375c;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: "Sora", sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.5;
+  font-family: "Sora", sans-serif;
+  font-size: 1.6rem;
+}
+/* Common */
+
+a {
+  text-decoration: none;
 }
 
+.container {
+  /* khi co trinh duyet thi van co 24px hai ben */
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+  width: 1170px;
+}
+
+.btn {
+  --height: 60px;
+
+  display: inline-block;
+  min-width: 205px;
+  height: var(--height);
+  padding: 0 20px;
+  line-height: var(--height);
+  border: 1px solid #2e80ce;
+  color: #fff;
+  font-size: 1.6rem;
+  background: #2e80ce;
+  border-radius: 99px;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* Header */
+.header {
+  min-height: 100vh;
+  padding-top: 30px;
+  background: var(--header-color);
+}
+
+.logo {
+  display: inline-flex;
+  position: relative;
+  font-size: 1rem;
+}
+
+.logo__circle::before,
+.logo__circle::after {
+  content: " ";
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.logo__circle::before {
+  width: 3em;
+  height: 3em;
+  background: #2e80ce;
+}
+
+.logo__circle::after {
+  position: absolute;
+  top: 1.1em;
+  left: 1.1em;
+  width: 1.6em;
+  height: 1.6em;
+  background: #fff;
+}
+
+.logo__text {
+  margin-left: 0.6em;
+  line-height: 1.5em;
+  text-align: right;
+}
+
+.logo__brand {
+  font-weight: 400;
+  font-size: 1.8em;
+  color: #fff;
+  display: block;
+}
+
+.logo__brand--small {
+  font-weight: 300;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+/* Header top */
+.header {
+  padding-top: 30px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__list {
+  display: flex;
+}
+
+.action__login,
+.navbar__link {
+  padding: 4px 21px;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #c9d2da;
+}
+
+.navbar__link:hover,
+.navbar__item--active {
+  color: #fff;
+  text-shadow: 1px 0 0 currentColor;
+}
+
+.navbar__item--active::before {
+  position: relative;
+  content: "";
+  top: -2px;
+  left: -8px;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.action__signup {
+  --height: 44px;
+  min-width: 104px;
+}
